@@ -398,34 +398,35 @@ Different similarity algorithms is listed in Table
 parameters.
 
 ::: {#alg}
-  **Algorithm**                    **Formula**
-  -------------------------------- -----------------------------------------------------------------------------------
-  Jaccard                          $a / (a+b+c)$
-  Russel - Rao                     $a/n$
-  Rogers - Tanimoto                $(a+d)/(a+2 \times (b+c)+d)$
-  Kulczynski #1                    $a/(b+c)$
-  Kulczynski #2                    $0.5 \times (a/(a+b)+a/(a+c))$
-  Dice                             $2 \times a/(2 \times a+b+c)$
-  Pearson's Phi coefficient        $((a \times d)-(c \times b))/\sqrt{(a+c) \times (c+d) \times (a+b) \times (b+d)}$
-  Baroni-Urbani/Buser              $(a+\sqrt{a \times d})/(a+b+c+\sqrt{a \times d})$
-  Braun-Blanquet                   if $(a+b)> (a+c)$ then $S = a/(a+b)$ else $S = a/(a+c)$
-  Simpson similarity coefficient   if $(a+b) < (a+c)$ then $S = a/(a+b)$ else $S = a/(a+c)$
-  Michael                          $4 \times (a \times d-b \times c)/((a+d) \times (a+d)+(b+c) \times (b+c))$
-  Sokal and Sneath #1              $a/(a+2 \times (b+c))$
-  SokalSneath #2                   $0.25  \times  ( a/(a+b)+ a/(a+c)+ d/(b+d)+ d/(c+d) )$
-  SokalSneath #3                   $a \times d/\sqrt{(a+b) \times (a+c) \times (d+b) \times (d+c)}$
-  Sokal and Sneath #4              $(a+d)/(b+c)$
-  Sokal and Sneath #5              $2 \times (a+d)/(2 \times (a+d)+b+c)$
-  Simple Matching                  $(a+d)/(a+b+c+d)=(a+d)/n$
-  Sneath - Sokal                   $(a+d)/(a +0.5 \times (b+c)+d)$
-  Kocher - Wong                    $a \times n/((a+b) \times (c+d))$
-  Ochiaï #1                        $a/\sqrt{(a+b) \times (a+c)}$
-  Ochiaï #2                        $a \times d/\sqrt{(a+b) \times (a+c) \times (d+b) \times (d+c)}$
-  Yule's Sigma                     $(\sqrt{a \times d}-\sqrt{b \times c})/(\sqrt{a \times d}+\sqrt{b \times c})$
-  Yule's Q                         $(a \times d-b \times c)/(a \times d+b \times c)$
-  McConnoughy                      $(a \times a - b \times c) / \sqrt{(a+b) \times (a+c)}$
-  Phi Square                       $(a \times d + b \times c)^2 / ((a+b) \times (a+c) \times (b+c) \times (b+d))$
-  Dispersion                       $(a \times d-b \times c)/(a+b+c+d)^2$
+
+| **Algorithm**              | **Formula**                                                                 |
+|--------------------------------|-----------------------------------------------------------------------------------|
+| Jaccard                        | $a / (a+b+c)$                                                                     |
+| Russel - Rao                   | $a/n$                                                                             |
+| Rogers - Tanimoto              | $(a+d)/(a+2 \times (b+c)+d)$                                                      |
+| Kulczynski \#1                 | $a/(b+c)$                                                                         |
+| Kulczynski \#2                 | $0.5 \times (a/(a+b)+a/(a+c))$                                                    |
+| Dice                           | $2 \times a/(2 \times a+b+c)$                                                     |
+| Pearson's Phi coefficient      | $((a \times d)-(c \times b))/\sqrt{(a+c) \times (c+d) \times (a+b) \times (b+d)}$ |
+| Baroni-Urbani/Buser            | $(a+\sqrt{a \times d})/(a+b+c+\sqrt{a \times d})$                                 |
+| Braun-Blanquet                 | if $(a+b)> (a+c)$  then $S = a/(a+b)$ else $S = a/(a+c)$                          |
+| Simpson similarity coefficient | if $(a+b) < (a+c)$ then $S = a/(a+b)$ else $S = a/(a+c)$                          |
+| Michael                        | $4 \times (a \times d-b \times c)/((a+d) \times (a+d)+(b+c) \times (b+c))$        |
+| Sokal and Sneath \#1           | $a/(a+2 \times (b+c))$                                                            |
+| SokalSneath \#2                | $0.25  \times  ( a/(a+b)+ a/(a+c)+ d/(b+d)+ d/(c+d) )$                            |
+| SokalSneath \#3                | $a \times d/\sqrt{(a+b) \times (a+c) \times (d+b) \times (d+c)}$                  |
+| Sokal and Sneath \#4           | $(a+d)/(b+c)$                                                                     |
+| Sokal and Sneath \#5           | $2 \times (a+d)/(2 \times (a+d)+b+c)$                                             |
+| Simple Matching                | $(a+d)/(a+b+c+d)=(a+d)/n$                                                         |
+| Sneath - Sokal                 | $(a+d)/(a +0.5 \times (b+c)+d) $                                                  |
+| Kocher - Wong                  | $a \times n/((a+b) \times (c+d))$                                                 |
+| Ochiaï \#1                     | $a/\sqrt{(a+b) \times (a+c)}$                                                     |
+| Ochiaï \#2                     | $a \times d/\sqrt{(a+b) \times (a+c) \times (d+b) \times (d+c)}$                  |
+| Yule's Sigma                   | $(\sqrt{a \times d}-\sqrt{b \times c})/(\sqrt{a \times d}+\sqrt{b \times c})$     |
+| Yule's Q                       | $(a \times d-b \times c)/(a \times d+b \times c)$                                 |
+| McConnoughy                    | $(a \times a - b \times c) / \sqrt{(a+b) \times (a+c)}$                           |
+| Phi Square                     | $(a \times d + b \times c)^2 / ((a+b) \times (a+c) \times (b+c) \times (b+d))$    |
+| Dispersion                     | $(a \times d-b \times c)/(a+b+c+d)^2$                                             |
 
   : Similarity algorithm for binary vectors.
 :::
