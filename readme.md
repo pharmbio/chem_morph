@@ -5,14 +5,10 @@ A survey on different approaches to calculate distance in cell profiling fingerp
 
 
 ------------------------------------------------------------------------
-:::
 
-::: 
-**Pharmaceutical Bioinformatics Research Group**
-:::
-::: 
-by Nima Chamyani
-:::
+**Pharmaceutical Bioinformatics Research Group**  
+
+by Nima Chamyani  
 
 
 # Introduction
