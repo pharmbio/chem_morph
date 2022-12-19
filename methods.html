@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>3 Methods | A survey on different approaches to calculate distancein cell profiling fingerprint space and chemical spaceand their relationship</title>
+  <meta name="description" content="3 Methods | A survey on different approaches to calculate distancein cell profiling fingerprint space and chemical spaceand their relationship" />
+  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="3 Methods | A survey on different approaches to calculate distancein cell profiling fingerprint space and chemical spaceand their relationship" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="3 Methods | A survey on different approaches to calculate distancein cell profiling fingerprint space and chemical spaceand their relationship" />
+  
+  
+  
+
+<meta name="author" content="Nima Chamyani" />
+
+
+<meta name="date" content="2022-12-19" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="aim-of-the-analysis.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="aim-of-the-analysis.html"><a href="aim-of-the-analysis.html"><i class="fa fa-check"></i><b>2</b> Aim of the analysis</a></li>
+<li class="chapter" data-level="3" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>3</b> Methods</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="methods.html"><a href="methods.html#distance-metrics"><i class="fa fa-check"></i><b>3.1</b> Distance metrics</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="methods.html"><a href="methods.html#correlation-and-distance-correlation"><i class="fa fa-check"></i><b>3.1.1</b> Correlation and distance correlation</a></li>
+<li class="chapter" data-level="3.1.2" data-path="methods.html"><a href="methods.html#euclidean-distance"><i class="fa fa-check"></i><b>3.1.2</b> Euclidean distance</a></li>
+<li class="chapter" data-level="3.1.3" data-path="methods.html"><a href="methods.html#manhattan-distance"><i class="fa fa-check"></i><b>3.1.3</b> Manhattan distance</a></li>
+<li class="chapter" data-level="3.1.4" data-path="methods.html"><a href="methods.html#minkowski-distance"><i class="fa fa-check"></i><b>3.1.4</b> Minkowski distance</a></li>
+<li class="chapter" data-level="3.1.5" data-path="methods.html"><a href="methods.html#cosine-similarity"><i class="fa fa-check"></i><b>3.1.5</b> Cosine similarity</a></li>
+<li class="chapter" data-level="3.1.6" data-path="methods.html"><a href="methods.html#triangle-area-similarity-sector-area-similarity-ts-ss"><i class="fa fa-check"></i><b>3.1.6</b> Triangle Area Similarity – Sector Area Similarity (TS-SS)</a></li>
+<li class="chapter" data-level="3.1.7" data-path="methods.html"><a href="methods.html#jaccard-needham-similarity"><i class="fa fa-check"></i><b>3.1.7</b> Jaccard-Needham similarity</a></li>
+<li class="chapter" data-level="3.1.8" data-path="methods.html"><a href="methods.html#sørensendice-similarity"><i class="fa fa-check"></i><b>3.1.8</b> Sørensen–Dice similarity</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="methods.html"><a href="methods.html#chemical-similarity"><i class="fa fa-check"></i><b>3.2</b> Chemical Similarity</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="methods.html"><a href="methods.html#constitutional-topological-similarity"><i class="fa fa-check"></i><b>3.2.1</b> Constitutional (topological) similarity</a></li>
+<li class="chapter" data-level="3.2.2" data-path="methods.html"><a href="methods.html#configuration-and-conformation-similarity"><i class="fa fa-check"></i><b>3.2.2</b> Configuration and conformation similarity</a></li>
+<li class="chapter" data-level="3.2.3" data-path="methods.html"><a href="methods.html#physicochemical-properties-similarity"><i class="fa fa-check"></i><b>3.2.3</b> Physicochemical properties similarity</a></li>
+<li class="chapter" data-level="" data-path="methods.html"><a href="methods.html#quantum-chemistry-similarity"><i class="fa fa-check"></i>Quantum-chemistry similarity</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A survey on different approaches to calculate distancein cell profiling fingerprint space and chemical spaceand their relationship</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="methods" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">3</span> Methods<a href="methods.html#methods" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="distance-metrics" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Distance metrics<a href="methods.html#distance-metrics" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>It is meaningless to talk about "close" and "far" in any space, when
+there is no measurable distance. In order to establish these notions
+over a set of abstract mathematical objects, we must be capable of
+assessing how close each pair of these objects is to each other and
+interpret it as similarity. There are several different similarity
+functions that are used for measuring the distance between two vectors,
+numbers, or pairs of numbers. However, a proper distance measure should
+have a few properties to be metric. To be precise, a distance metric is
+a function with the following properties:</p>
+<ol style="list-style-type: decimal">
+<li><p>If the distance of two objects is zero, then they are the same, and
+vice versa <span class="math display">\[d(x,y) = 0 \Rightarrow x = y\]</span></p></li>
+<li><p>A proper distance metric is symmetric <span class="math display">\[d(x,y)=d(y,x)\]</span></p></li>
+<li><p>A proper distance metric satisfies triangular inequality (meaning
+for any triangle connecting three point, the sum of the lengths of
+any two sides must be greater than or equal to the length of the
+remaining side) <span class="math display">\[d(x,y) \le d(x,z)+d(z,y)\]</span></p></li>
+</ol>
+<p>Now if we center the distance between 0 and 1 then the similarity (S)
+can be define as <span class="math display">\[S(x,y) = 1 - d(x,y)\]</span></p>
+<div id="correlation-and-distance-correlation" class="section level3 hasAnchor" number="3.1.1">
+<h3><span class="header-section-number">3.1.1</span> Correlation and distance correlation<a href="methods.html#correlation-and-distance-correlation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong><em>Correlation</em></strong>: Correlation is a statistical measure that expresses
+the extent to which two variables are linearly related. Since
+correlation is looking for the trend on the samples, it is not a proper
+distance metrics. It cannot follow the triangular inequality meaning
+except for the extreme cases, it’s not possible to find the correlation
+of two random variables given their correlations with a third one. So
+it’s not possible to use correlation to measure the distances and
+similarity. For instance, the correlation between <span class="math inline">\((1, 2, 3)\)</span> and
+<span class="math inline">\((10, 20, 30)\)</span> or any other set with the same trend and different
+magnitude like <span class="math inline">\((100, 200, 300)\)</span> is the same and equal to 1. It cannot
+be interpreted that they are the same point in the space or close to
+each other. But they act in a similar manner because they all seem to
+point in the same direction.</p>
+<p>There are several type of correlation algorithms. Pearson correlation is
+the most widely used correlation statistic to measure the degree of the
+relationship between linearly related variables. It assumes that
+variables are normally distributed, have linearity between them and data
+is equally distributed around the regression line (homoscedasticity).
+Another type of correlation is Kendall rank correlation which is a
+non-parametric test that measures the strength of dependence between two
+variables. While linear relationships mean two variables move together
+at a constant rate (i.g. two parallel and straight line), monotonic
+relationships measure how likely it is for two variables to move in the
+same direction, but not necessarily at a constant rate (not a linear
+path). Spearman’s is incredibly similar to Kendall’s. It is a
+non-parametric test that measures a monotonic relationship using ranked
+data. While it can often be used interchangeably with Kendall’s,
+Kendall’s is more robust and generally the preferred method of the
+two(Table <a href="methods.html#corr" reference-type="ref" reference="corr">1</a>). The
+general formula for correlation is:</p>
+<p><span class="math display">\[corr(x,y) = \frac{cov(X, Y)}{ \sqrt{ \sigma_{X} \times \sigma_{Y} }}\]</span></p>
+<p>where <span class="math inline">\(cov(X, Y)\)</span> denotes the covariance of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> and <span class="math inline">\(\sigma\)</span> is
+the variance of the variable.</p>
+<div class="adjustbox">
+<p>width=</p>
+<div id="corr">
+<table>
+<caption>Most widely used correlation techniques</caption>
+<thead>
+<tr class="header">
+<th align="left">Correlation</th>
+<th align="left">Type of relation</th>
+<th align="left">Type of measurement</th>
+<th align="center">Type of distribution</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Pearson</td>
+<td align="left">Linear</td>
+<td align="left">Quantitative (interval or ratio) variables</td>
+<td align="center">Normal</td>
+</tr>
+<tr class="even">
+<td align="left">Spearman</td>
+<td align="left">Non-linear</td>
+<td align="left">Ordinal, interval or ratio variables</td>
+<td align="center">Any</td>
+</tr>
+<tr class="odd">
+<td align="left">Kendall</td>
+<td align="left">Non-linear</td>
+<td align="left">Ordinal, interval or ratio variables</td>
+<td align="center">Any</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><strong><em>Distance correlation</em></strong>: The correlation value can range from -1 to
+1, which indicates perfect negative or positive correlation while zero
+represents no correlation at all. Also, in correlation the converse
+implication is not true, meaning the result of reversing its two
+constituent statements is not valid. In another term, zero correlation
+between two variable does not necessarily imply their independence. This
+drawback lead to developing a new methods that is called distance
+correlation. So beside working with non-linear type of relationship, a
+distance correlation of zero indicates that there is in fact no
+dependence between the two variables.</p>
+<p><span class="math display">\[dCorr^2(x,y) = \frac{dCov^2(X, Y)}{ \sqrt{ d\sigma^2_{X} \times d\sigma^2_{Y} }}\]</span></p>
+<p>The distance correlation produces non-negative value between 0 and 1.</p>
+</div>
+<div id="euclidean-distance" class="section level3 hasAnchor" number="3.1.2">
+<h3><span class="header-section-number">3.1.2</span> Euclidean distance<a href="methods.html#euclidean-distance" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The Euclidean distance between two points measures the length of the
+shortest segment connecting them. It is the most obvious way of
+representing distance between two points that can be calculated by the
+Pythagorean theorem.
+<span class="math display">\[d(x, y)=\sqrt{\sum_{i=1}^k\left(x_i-y_i\right)^2}\]</span></p>
+<p>The Euclidean distance is most commonly used to calculate the distance
+between two rows of numerical data, such as floating-point or integer
+data. It is often done after normalizing or standardizing numeric values
+otherwise, the distance measure will be dominated by large values.</p>
+<div class="tcolorbox">
+<p>NOTE: In order to speed up distance calculations, it is common to remove
+the square root operation when performing thousands or millions of
+calculations. After this modification, the scores will still have the
+same relative proportions and can still be used effectively within a
+machine learning algorithm.</p>
+</div>
+</div>
+<div id="manhattan-distance" class="section level3 hasAnchor" number="3.1.3">
+<h3><span class="header-section-number">3.1.3</span> Manhattan distance<a href="methods.html#manhattan-distance" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In Manhattan distance, the distance between two points is measured by
+the absolute sum of their coordinate differences (also referred to as
+rectilinear distance, L1 distance, taxicab geometry or city block
+distance).</p>
+<p><span class="math display">\[d_m(\mathbf{x}, \mathbf{y})=\|\mathbf{x}-\mathbf{y}\|_m=\sum_{i=m}^n\left|x_i-y_i\right|\]</span></p>
+<p>It might make sense to calculate Manhattan distance instead of Euclidean
+distance for two vectors in an integer feature space where vectors
+describe objects on a uniform grid. Hence the taxicab name for the
+measure: the shortest path a taxicab would take between city blocks
+(coordinates on the grid).</p>
+</div>
+<div id="minkowski-distance" class="section level3 hasAnchor" number="3.1.4">
+<h3><span class="header-section-number">3.1.4</span> Minkowski distance<a href="methods.html#minkowski-distance" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Minkowski distance calculates the distance between two real-valued
+vectors. It is generalized from of Euclidean and Manhattan methods and
+by adding "p" as a parameter, it allows different distance measures to
+be calculated.</p>
+<p><span class="math display">\[D(X, Y)=\left(\sum_{i=1}^n\left|x_i-y_i\right|^p\right)^{1 / p}\]</span></p>
+<p>So if p is 2, Minkowski distance is the same as the Euclidean distance
+and when p is 1, it’s the same as the Manhattan distance, however,
+intermediate values provide a controlled balance between the two
+measures. This is particularly useful in machine learning algorithms
+that use distance measures, since it gives control over the type of
+distance measure to be used for real-valued vectors.</p>
+</div>
+<div id="cosine-similarity" class="section level3 hasAnchor" number="3.1.5">
+<h3><span class="header-section-number">3.1.5</span> Cosine similarity<a href="methods.html#cosine-similarity" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The cosine similarity computes the similarity between two samples that
+have been obtained from the same or different distributions. Samples are
+viewed as vectors in an inner product space, and the cosine similarity
+is defined as the cosine of the angle between them, that is, the dot
+product of the vectors divided by the product of their lengths.</p>
+<p><span class="math display">\[S_c(x,y) = cos(\theta) = \frac{\sum_i x_i y_i}{ \sqrt{ \sum_i x_i^2} \sqrt{ \sum_i y_i^2 } }
+= \frac{ \langle x,y \rangle }{ ||x||\ ||y|| }\]</span></p>
+<p>As a result, cosine similarity is used when the magnitude between two
+vectors is not relevant and it is only their orientation that will
+determine their similarity. Hence, two vectors with the same orientation
+have a cosine similarity of 1, two vectors at 90° have a similarity of
+0, and two vectors diametrically opposed have a similarity of -1. Thus,
+cosine similarity resembles Pearson correlation very closely. In a
+similar way to Pearson correlation, the cosine distance cannot be
+considered as a proper distance metric due to the fact that it does not
+exhibit the triangle inequality property. It is therefore very common to
+run into confusion when comparing the cosine similarity and the Pearson
+correlation. However, correlation is just acting similar to the cosine
+similarity where vectors are being centred (<span class="math inline">\(\bar{x} = \bar{y} = 0\)</span>) and
+unlike the cosine, the correlation is invariant not only to scale but
+also to the shift (location changes) of x and y.</p>
+<div class="tcolorbox">
+<p><strong>Cosine Similarity vs Pearson Correlation</strong><br />
+We know that the cosine similarity between two vectors <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> is
+just the angle between them
+<span class="math display">\[\cos\theta = \frac{a\cdot b}{\lVert{a}\rVert \, \lVert{b}\rVert}\]</span></p>
+<p>And for <span class="math inline">\(a\)</span> vector <span class="math inline">\(x\)</span> the "<span class="math inline">\(z\)</span>-score" vector would typically be
+defined as <span class="math display">\[z=\frac{x-\bar{x}}{s_x}\]</span> where
+<span class="math inline">\(\bar{x}=\frac{1}{n}\sum_ix_i\)</span> and <span class="math inline">\(s_x^2=\overline{(x-\bar{x})^2}\)</span> are
+the mean and variance of <span class="math inline">\(x\)</span>. So <span class="math inline">\(z\)</span> has mean 0 and standard deviation
+1, i.e. <span class="math inline">\(z_x\)</span> is the standardized version of <span class="math inline">\(x\)</span>. For two vectors <span class="math inline">\(x\)</span>
+and <span class="math inline">\(y\)</span>, their correlation coefficient would be
+<span class="math display">\[\rho_{x,y}=\overline{(z_xz_y)}\]</span></p>
+<p>Now if the vector a has zero mean, then its variance will be
+<span class="math inline">\(s_a^2=\frac{1}{n}\lVert{a}\rVert^2\)</span>, so its unit vector and <span class="math inline">\(z\)</span>-score
+will be related by
+<span class="math display">\[\hat{a}=\frac{a}{\lVert{a}\rVert}=\frac{z_a}{\sqrt n}\]</span></p>
+<p>So if the vectors a and b are centered (i.e. have zero means), then
+their cosine similarity will be the same as their correlation
+coefficient.</p>
+</div>
+</div>
+<div id="triangle-area-similarity-sector-area-similarity-ts-ss" class="section level3 hasAnchor" number="3.1.6">
+<h3><span class="header-section-number">3.1.6</span> Triangle Area Similarity – Sector Area Similarity (TS-SS)<a href="methods.html#triangle-area-similarity-sector-area-similarity-ts-ss" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Problems with Euclidean base metrics</strong>: Two vectors with no common
+component values may have a smaller distance than similar vectors
+containing the same component values. For instance, in A(1, 0, 0), B(0,
+-2, -2), C(10, 0, 0) if we calculate the distance we would have d(A , C)
+= 9 units and d(A , B) = 3 units. So, according to Euclidean metric, A
+and B are closer or more similar than A and C. Despite this, A and C are
+in the same direction and only their magnitude differs. So trends in
+vectors cannot be explained by Euclidean metric systems.</p>
+<p><strong>Problems with Cosine similarity</strong>: As it mentioned before, Cosine
+similarity is invariant to scale. As a result, it does not take
+magnitude into account and only focuses on orientation. As an example,
+all three vectors of A(1, 2, 3), B(10, 20, 30) and C(100, 200, 300) will
+be considered to be the same. Despite the fact that vector A and vector
+B are closer to each other than any other combination of A, B, and C,
+cosine similarity cannot further distinguish them.</p>
+<p>Triangle Area Similarity – Sector Area Similarity (TS-SS) was developed
+to address this problem. An algorithm that can combine both the
+direction and magnitude of vector in similarity check.</p>
+<div class="tcolorbox">
+<p>NOTE: I found this method in an article originally falls under Natural
+Language Processing (NLP) but the logic of the metric seems to work very
+well for any vector similarity check.<br />
+1- Euclidean distance:
+<span class="math display">\[ED(x, y)=\sqrt{\sum_{i=1}^k\left(x_i-y_i\right)^2}\]</span></p>
+<p>2- Triangle’s Area Similarity (TS):
+<span class="math display">\[\operatorname{TS}(x, y)=\frac{|x| \cdot|y| \cdot \sin \left(\theta^{\prime}\right)}{2}\]</span>
+3- The magnitude difference between two vectors:
+<span class="math display">\[\operatorname{MD}(x, y)=\left|\sqrt{\sum_{i=1}^k x_i^2}-\sqrt{\sum_{i=1}^k y_i^2}\right|\]</span>
+4- Sector’s Area Similarity (SS):
+<span class="math display">\[\mathrm{SS}(x, y)=\pi \cdot(\mathrm{ED}(x, y)+\operatorname{MD}(x, y))^2 \cdot\left(\frac{\theta^{\prime}}{360}\right)\]</span></p>
+<p>5- Finally by multiplying them together, we combine TS and SS:</p>
+<p><span class="math display">\[d_{TS-SS} = TS \times SS\]</span></p>
+</div>
+</div>
+<div id="jaccard-needham-similarity" class="section level3 hasAnchor" number="3.1.7">
+<h3><span class="header-section-number">3.1.7</span> Jaccard-Needham similarity<a href="methods.html#jaccard-needham-similarity" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In 1884, Grove Karl Gilbert developed the Jaccard similarity, which was
+later independently developed by Paul Jaccard and Tanimoto. Their work
+are identical in generally taking the ratio of intersection over union
+of the sets. Thus, it measures the similarity between finite sample sets
+by dividing the portion that they have in common minus the part that is
+different.</p>
+<p><span class="math display">\[J(X, Y)=\frac{|X \cap Y|}{|X \cup Y|}=\frac{|X \cap Y|}{|X|+|Y|-|X \cap Y|}\]</span></p>
+<p>It is is widely used in computer science where binary or binarized data
+are present. In confusion matrices employed for binary classification,
+the Jaccard index can be framed in the following formula:</p>
+<p><span class="math display">\[{\displaystyle {\text{Jaccard index}}={\frac {TP}{TP+FP+FN}}}\]</span></p>
+<p>where TP are the true positives, FP the false positives and FN the false
+negatives</p>
+<div class="tcolorbox">
+<p>NOTE: Various forms of functions described as Tanimoto similarity and
+Tanimoto distance occur in the literature and on the Internet. Most of
+these are synonyms for Jaccard similarity and Jaccard distance, but some
+are mathematically different. The similarity ratio is equivalent to
+Jaccard similarity, but the distance function is not the same as Jaccard
+distance.</p>
+</div>
+</div>
+<div id="sørensendice-similarity" class="section level3 hasAnchor" number="3.1.8">
+<h3><span class="header-section-number">3.1.8</span> Sørensen–Dice similarity<a href="methods.html#sørensendice-similarity" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Sørensen–Dice similarity, F1 score, Czekanowski’s binary
+(non-quantitative) index or Zijdenbos similarity index all referring to
+an index equals twice the intersection (number of elements common to
+both sets) divided by the sum of the elements in each set.</p>
+<p><span class="math display">\[{\displaystyle DSC(X, Y)={\frac {2|X\cap Y|}{|X|+|Y|}}}\]</span></p>
+<p>When applied to Boolean data, using the definition of true positive
+(TP), false positive (FP), and false negative (FN), it can be written
+as:</p>
+<p><span class="math display">\[{\displaystyle DSC={\frac {2TP}{2TP+FP+FN}}}\]</span></p>
+<div class="tcolorbox">
+<p>NOTE: Sørensen–Dice similarity is not very different in form the
+Jaccard similarity. Both are equivalent in the sense that given a value
+for the Sørensen–Dice coefficient <span class="math inline">\({\displaystyle S}\)</span>, one can
+calculate the respective Jaccard index value <span class="math inline">\({\displaystyle J}\)</span> and
+vice versa, using the equations <span class="math inline">\({\displaystyle J=S/(2-S)}\)</span> and
+<span class="math inline">\({\displaystyle S=2J/(1+J)}\)</span>.</p>
+<p>Since the Sørensen–Dice coefficient does not satisfy the triangle
+inequality, it can be considered a semimetric version of the Jaccard
+index. The function ranges between zero and one, like Jaccard. Unlike
+Jaccard, the corresponding difference function</p>
+<p><span class="math display">\[{\displaystyle d=1-{\frac {2|X\cap Y|}{|X|+|Y|}}}\]</span></p>
+<p>is not a proper distance metric as it does not satisfy the triangle
+inequality.</p>
+</div>
+</div>
+</div>
+<div id="chemical-similarity" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Chemical Similarity<a href="methods.html#chemical-similarity" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="constitutional-topological-similarity" class="section level3 hasAnchor" number="3.2.1">
+<h3><span class="header-section-number">3.2.1</span> Constitutional (topological) similarity<a href="methods.html#constitutional-topological-similarity" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The 2D molecular structure are the bases to assess topological
+similarity. A number of approaches have been proposed to extract
+information from molecular structures. However, these structural models
+cannot distinguish conformers due to their inability to interpret 3D
+molecular structures.</p>
+<p><strong>Classic Topological Descriptors</strong>: The most basic representation of
+topology is the count of individual atoms, bonds, rings, pharmacophore
+points, and the degree of connectivity between the atoms. Using these
+two-dimensional fragment descriptors (atom-centered, bond-centered,
+ring-centered fragments) the similarity of two compound will be
+assessed.</p>
+<p><strong>Molecular Fingerprints and Molecular Holograms</strong>: In general, a
+molecule’s fingerprint can be interpreted as a system of encoding a
+molecule’s structure. The most common fingerprint is a sequence of
+binary digits (bits) that indicate whether a molecule contains certain
+substructures. So, by using bit-strings (fingerprints), two-dimensional
+substructures can be encoded to a vector. Different distance algorithms
+(such as those discussed in the distance metric section) can be applied
+to these binary fingerprints in order to determine their distances.</p>
+<p>Given two binary vectors, <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, each with n binary attributes,
+each attribute of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> can either be 0 or 1. The total number of
+each combination of attributes for both <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are specified as
+follows:</p>
+<ul>
+<li><p><span class="math inline">\(a\)</span> represents the total number of attributes where <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> both
+have a value of 1.</p></li>
+<li><p><span class="math inline">\(b\)</span> represents the total number of attributes where the attribute of
+<span class="math inline">\(X\)</span> is 1 and the attribute of <span class="math inline">\(Y\)</span> is 0.</p></li>
+<li><p><span class="math inline">\(c\)</span> represents the total number of attributes where the attribute of
+<span class="math inline">\(X\)</span> is 0 and the attribute of <span class="math inline">\(Y\)</span> is 1.</p></li>
+<li><p><span class="math inline">\(d\)</span> represents the total number of attributes where <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> both
+have a value of 0.</p></li>
+<li><p><span class="math inline">\(n = a + b + c + d\)</span></p></li>
+</ul>
+<p>Different similarity algorithms is listed in Table
+<a href="methods.html#alg" reference-type="ref" reference="alg">2</a> based on these
+parameters.</p>
+<div id="alg">
+<table>
+<caption>Similarity algorithm for binary vectors.</caption>
+<thead>
+<tr class="header">
+<th align="left"><strong>Algorithm</strong></th>
+<th align="left"><strong>Formula</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Jaccard</td>
+<td align="left"><span class="math inline">\(a / (a+b+c)\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">Russel - Rao</td>
+<td align="left"><span class="math inline">\(a/n\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">Rogers - Tanimoto</td>
+<td align="left"><span class="math inline">\((a+d)/(a+2 \times (b+c)+d)\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">Kulczynski #1</td>
+<td align="left"><span class="math inline">\(a/(b+c)\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">Kulczynski #2</td>
+<td align="left"><span class="math inline">\(0.5 \times (a/(a+b)+a/(a+c))\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">Dice</td>
+<td align="left"><span class="math inline">\(2 \times a/(2 \times a+b+c)\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">Pearson’s Phi coefficient</td>
+<td align="left"><span class="math inline">\(((a \times d)-(c \times b))/\sqrt{(a+c) \times (c+d) \times (a+b) \times (b+d)}\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">Baroni-Urbani/Buser</td>
+<td align="left"><span class="math inline">\((a+\sqrt{a \times d})/(a+b+c+\sqrt{a \times d})\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">Braun-Blanquet</td>
+<td align="left">if <span class="math inline">\((a+b)&gt; (a+c)\)</span> then <span class="math inline">\(S = a/(a+b)\)</span> else <span class="math inline">\(S = a/(a+c)\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">Simpson similarity coefficient</td>
+<td align="left">if <span class="math inline">\((a+b) &lt; (a+c)\)</span> then <span class="math inline">\(S = a/(a+b)\)</span> else <span class="math inline">\(S = a/(a+c)\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">Michael</td>
+<td align="left"><span class="math inline">\(4 \times (a \times d-b \times c)/((a+d) \times (a+d)+(b+c) \times (b+c))\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">Sokal and Sneath #1</td>
+<td align="left"><span class="math inline">\(a/(a+2 \times (b+c))\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">SokalSneath #2</td>
+<td align="left"><span class="math inline">\(0.25 \times ( a/(a+b)+ a/(a+c)+ d/(b+d)+ d/(c+d) )\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">SokalSneath #3</td>
+<td align="left"><span class="math inline">\(a \times d/\sqrt{(a+b) \times (a+c) \times (d+b) \times (d+c)}\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">Sokal and Sneath #4</td>
+<td align="left"><span class="math inline">\((a+d)/(b+c)\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">Sokal and Sneath #5</td>
+<td align="left"><span class="math inline">\(2 \times (a+d)/(2 \times (a+d)+b+c)\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">Simple Matching</td>
+<td align="left"><span class="math inline">\((a+d)/(a+b+c+d)=(a+d)/n\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">Sneath - Sokal</td>
+<td align="left"><span class="math inline">\((a+d)/(a +0.5 \times (b+c)+d)\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">Kocher - Wong</td>
+<td align="left"><span class="math inline">\(a \times n/((a+b) \times (c+d))\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">Ochiaï #1</td>
+<td align="left"><span class="math inline">\(a/\sqrt{(a+b) \times (a+c)}\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">Ochiaï #2</td>
+<td align="left"><span class="math inline">\(a \times d/\sqrt{(a+b) \times (a+c) \times (d+b) \times (d+c)}\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">Yule’s Sigma</td>
+<td align="left"><span class="math inline">\((\sqrt{a \times d}-\sqrt{b \times c})/(\sqrt{a \times d}+\sqrt{b \times c})\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">Yule’s Q</td>
+<td align="left"><span class="math inline">\((a \times d-b \times c)/(a \times d+b \times c)\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">McConnoughy</td>
+<td align="left"><span class="math inline">\((a \times a - b \times c) / \sqrt{(a+b) \times (a+c)}\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">Phi Square</td>
+<td align="left"><span class="math inline">\((a \times d + b \times c)^2 / ((a+b) \times (a+c) \times (b+c) \times (b+d))\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">Dispersion</td>
+<td align="left"><span class="math inline">\((a \times d-b \times c)/(a+b+c+d)^2\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><span id="alg" label="alg"></span></p>
+<p><strong>Burden eigenvalue descriptors or BCUT</strong>: BCUT descriptors are based on
+an extension of Burden’s approach<span class="citation">(<a href="#ref-burden1989molecular" role="doc-biblioref">Burden 1989</a>)</span> for searching
+large databases for chemical similarity<span class="citation">(<a href="#ref-pearlman2002novel" role="doc-biblioref">Pearlman and Smith 2002</a>)</span>. A molecule
+graph with hydrogen included is used to calculate the Burden matrix, and
+condensing the information from those matrices to eigenvalues results in
+a one-dimensional measure, which closely reflect the structure of a
+molecule. In particular, BCUTs are widely used in similarity analyses.</p>
+</div>
+<div id="configuration-and-conformation-similarity" class="section level3 hasAnchor" number="3.2.2">
+<h3><span class="header-section-number">3.2.2</span> Configuration and conformation similarity<a href="methods.html#configuration-and-conformation-similarity" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Some activities may require more consideration of conformational
+flexibility of chemical compounds and their 3D descriptors such as shape
+and volume not just topological information. It is possible, in these
+cases, to model activity and evaluate similarity only with the molecular
+conformations. This is widely used in virtual screening of the ligands
+to see their binding affinity to proteins. The same ligand cavity in the
+receptor can be filled with two molecules with very different
+topological structures but very similar 3D conformations. Therefore,
+it’s safe to assume that conformation similarity checks should yield a
+more realistic score than topological similarity tests for most of the
+cases.</p>
+<p>Configuration and conformation similarity checks can be performed using
+a number of different approaches:</p>
+<p><strong>Shape</strong>: <strong>Distance-based and Angle-based Descriptors</strong> <strong>Three
+Dimensional and Field Similarity</strong> <strong>Molecular Multi-pole Moments</strong></p>
+</div>
+<div id="physicochemical-properties-similarity" class="section level3 hasAnchor" number="3.2.3">
+<h3><span class="header-section-number">3.2.3</span> Physicochemical properties similarity<a href="methods.html#physicochemical-properties-similarity" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="quantum-chemistry-similarity" class="section level3 unnumbered hasAnchor">
+<h3>Quantum-chemistry similarity<a href="methods.html#quantum-chemistry-similarity" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div class="csl-entry">
+Burden, Frank R. 1989. <span>“Molecular Identification Number for Substructure Searches.”</span> <em>Journal of Chemical Information and Computer Sciences</em> 29 (3): 225–27.
+</div>
+<div class="csl-entry">
+Pearlman, Robert S, and KM Smith. 2002. <span>“Novel Software Tools for Chemical Diversity.”</span> In <em>3D QSAR in Drug Design</em>, 339–53. Springer.
+</div>
+</div>
+</div>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-burden1989molecular" class="csl-entry">
+Burden, Frank R. 1989. <span>“Molecular Identification Number for Substructure Searches.”</span> <em>Journal of Chemical Information and Computer Sciences</em> 29 (3): 225–27.
+</div>
+<div id="ref-pearlman2002novel" class="csl-entry">
+Pearlman, Robert S, and KM Smith. 2002. <span>“Novel Software Tools for Chemical Diversity.”</span> In <em>3D QSAR in Drug Design</em>, 339–53. Springer.
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="aim-of-the-analysis.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": false,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
