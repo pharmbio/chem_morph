@@ -1,44 +1,19 @@
---- 
-title: "A survey on different approaches to calculate distance\
-in cell profiling fingerprint space and chemical space\
-and their relationship"
-author: "Nima Chamyani"
-date: "`r Sys.Date()`"
-site: "bookdown::bookdown_site"
-output:
-  bookdown::gitbook: default
-documentclass: book
-bibliography: ["references.bib"]
-rmd_files: ["index.Rmd", "01_intro.rmd", "02_aim.Rmd", "03_methods.rmd"]
-biblio-style: apalike
-link-citations: yes
----
-# Preface {-}
-
-::: {style="display: inline; justify-content: center; align-items: center;"} 
-\
-![image](Uppsala_University_seal_svg.png){width=10%}\
-[Uppsala Universitet]{.smallcaps}\
-Department of Pharmaceutical Biosciences
-\
 ------------------------------------------------------------------------
 
-**ANALYSIS REPORT**\
-*A survey on different approaches to calculate distance\
-in cell profiling fingerprint space and chemical space\
-and their relationship\
-*\
+**ANALYSIS REPORT**
+A survey on different approaches to calculate distance in cell profiling fingerprint space and chemical space and their relationship
+
 
 ------------------------------------------------------------------------
 :::
 
-::: {style="display: flex; justify-content: center; align-items: center;"}
+::: 
 **Pharmaceutical Bioinformatics Research Group**
 :::
-::: {style="display: flex; justify-content: center; align-items: center;"}
-[Nima Chamyani]{.smallcaps}\
+::: 
+by Nima Chamyani
 :::
-\
+
 
 # Introduction
 
