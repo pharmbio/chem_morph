@@ -152,11 +152,11 @@ between two rows of numerical data, such as floating-point or integer
 data. It is often done after normalizing or standardizing numeric values
 otherwise, the distance measure will be dominated by large values.
 
-NOTE: In order to speed up distance calculations, it is common to remove
-the square root operation when performing thousands or millions of
-calculations. After this modification, the scores will still have the
-same relative proportions and can still be used effectively within a
-machine learning algorithm.
+>NOTE: In order to speed up distance calculations, it is common to remove
+>the square root operation when performing thousands or millions of
+>calculations. After this modification, the scores will still have the
+>same relative proportions and can still be used effectively within a
+>machine learning algorithm.
 
 
 ### Manhattan distance
@@ -217,27 +217,27 @@ unlike the cosine, the correlation is invariant not only to scale but
 also to the shift (location changes) of x and y.
 
 
-**Cosine Similarity vs Pearson Correlation**\
-We know that the cosine similarity between two vectors $a$ and $b$ is
-just the angle between them
-$$\cos\theta = \frac{a\cdot b}{\lVert{a}\rVert \, \lVert{b}\rVert}$$
-
-And for $a$ vector $x$ the \"$z$-score\" vector would typically be
-defined as $$z=\frac{x-\bar{x}}{s_x}$$ where
-$\bar{x}=\frac{1}{n}\sum_ix_i$ and $s_x^2=\overline{(x-\bar{x})^2}$ are
-the mean and variance of $x$. So $z$ has mean 0 and standard deviation
-1, i.e. $z_x$ is the standardized version of $x$. For two vectors $x$
-and $y$, their correlation coefficient would be
-$$\rho_{x,y}=\overline{(z_xz_y)}$$
-
-Now if the vector a has zero mean, then its variance will be
-$s_a^2=\frac{1}{n}\lVert{a}\rVert^2$, so its unit vector and $z$-score
-will be related by
-$$\hat{a}=\frac{a}{\lVert{a}\rVert}=\frac{z_a}{\sqrt n}$$
-
-So if the vectors a and b are centered (i.e. have zero means), then
-their cosine similarity will be the same as their correlation
-coefficient.
+> **Cosine Similarity vs Pearson Correlation**\
+> We know that the cosine similarity between two vectors $a$ and $b$ is
+> just the angle between them
+> $$\cos\theta = \frac{a\cdot b}{\lVert{a}\rVert \, \lVert{b}\rVert}$$
+> 
+> And for $a$ vector $x$ the \"$z$-score\" vector would typically be
+> defined as $$z=\frac{x-\bar{x}}{s_x}$$ where
+> $\bar{x}=\frac{1}{n}\sum_ix_i$ and $s_x^2=\overline{(x-\bar{x})^2}$ are
+> the mean and variance of $x$. So $z$ has mean 0 and standard deviation
+> 1, i.e. $z_x$ is the standardized version of $x$. For two vectors $x$
+> and $y$, their correlation coefficient would be
+> $$\rho_{x,y}=\overline{(z_xz_y)}$$
+> 
+> Now if the vector a has zero mean, then its variance will be
+> $s_a^2=\frac{1}{n}\lVert{a}\rVert^2$, so its unit vector and $z$-score
+> will be related by
+> $$\hat{a}=\frac{a}{\lVert{a}\rVert}=\frac{z_a}{\sqrt n}$$
+> 
+> So if the vectors a and b are centered (i.e. have zero means), then
+> their cosine similarity will be the same as their correlation
+> coefficient.
 
 
 ### Triangle Area Similarity -- Sector Area Similarity (TS-SS)
@@ -264,22 +264,22 @@ to address this problem. An algorithm that can combine both the
 direction and magnitude of vector in similarity check.
 
 
-NOTE: I found this method in an article originally falls under Natural
-Language Processing (NLP) but the logic of the metric seems to work very
-well for any vector similarity check.\
-1- Euclidean distance:
-$$ED(x, y)=\sqrt{\sum_{i=1}^k\left(x_i-y_i\right)^2}$$
-
-2- Triangle's Area Similarity (TS):
-$$\operatorname{TS}(x, y)=\frac{|x| \cdot|y| \cdot \sin \left(\theta^{\prime}\right)}{2}$$
-3- The magnitude difference between two vectors:
-$$\operatorname{MD}(x, y)=\left|\sqrt{\sum_{i=1}^k x_i^2}-\sqrt{\sum_{i=1}^k y_i^2}\right|$$
-4- Sector's Area Similarity (SS):
-$$\mathrm{SS}(x, y)=\pi \cdot(\mathrm{ED}(x, y)+\operatorname{MD}(x, y))^2 \cdot\left(\frac{\theta^{\prime}}{360}\right)$$
-
-5- Finally by multiplying them together, we combine TS and SS:
-
-$$d_{TS-SS} = TS \times SS$$
+> NOTE: I found this method in an article originally falls under Natural
+> Language Processing (NLP) but the logic of the metric seems to work very
+> well for any vector similarity check.\
+> 1- Euclidean distance:
+> $$ED(x, y)=\sqrt{\sum_{i=1}^k\left(x_i-y_i\right)^2}$$
+> 
+> 2- Triangle's Area Similarity (TS):
+> $$\operatorname{TS}(x, y)=\frac{|x| \cdot|y| \cdot \sin \left(\theta^{\prime}\right)}{2}$$
+> 3- The magnitude difference between two vectors:
+> $$\operatorname{MD}(x, y)=\left|\sqrt{\sum_{i=1}^k x_i^2}-\sqrt{\sum_{i=1}^k y_i^2}\right|$$
+> 4- Sector's Area Similarity (SS):
+> $$\mathrm{SS}(x, y)=\pi \cdot(\mathrm{ED}(x, y)+\operatorname{MD}(x, y))^2 \cdot\left(\frac{\theta^{\prime}}{360}\right)$$
+> 
+> 5- Finally by multiplying them together, we combine TS and SS:
+> 
+> $$d_{TS-SS} = TS \times SS$$
 
 
 ### Jaccard-Needham similarity
@@ -303,12 +303,12 @@ where TP are the true positives, FP the false positives and FN the false
 negatives
 
 
-NOTE: Various forms of functions described as Tanimoto similarity and
-Tanimoto distance occur in the literature and on the Internet. Most of
-these are synonyms for Jaccard similarity and Jaccard distance, but some
-are mathematically different. The similarity ratio is equivalent to
-Jaccard similarity, but the distance function is not the same as Jaccard
-distance.
+> NOTE: Various forms of functions described as Tanimoto similarity and
+> Tanimoto distance occur in the literature and on the Internet. Most of
+> these are synonyms for Jaccard similarity and Jaccard distance, but some
+> are mathematically different. The similarity ratio is equivalent to
+> Jaccard similarity, but the distance function is not the same as Jaccard
+> distance.
 
 
 ### Sørensen--Dice similarity
@@ -327,22 +327,22 @@ as:
 $${\displaystyle DSC={\frac {2TP}{2TP+FP+FN}}}$$
 
 
-NOTE: Sørensen--Dice similarity is not very different in form the
-Jaccard similarity. Both are equivalent in the sense that given a value
-for the Sørensen--Dice coefficient ${\displaystyle S}$, one can
-calculate the respective Jaccard index value ${\displaystyle J}$ and
-vice versa, using the equations ${\displaystyle J=S/(2-S)}$ and
-${\displaystyle S=2J/(1+J)}$.
-
-Since the Sørensen--Dice coefficient does not satisfy the triangle
-inequality, it can be considered a semimetric version of the Jaccard
-index. The function ranges between zero and one, like Jaccard. Unlike
-Jaccard, the corresponding difference function
-
-$${\displaystyle d=1-{\frac {2|X\cap Y|}{|X|+|Y|}}}$$
-
-is not a proper distance metric as it does not satisfy the triangle
-inequality.
+> NOTE: Sørensen--Dice similarity is not very different in form the
+> Jaccard similarity. Both are equivalent in the sense that given a value
+> for the Sørensen--Dice coefficient ${\displaystyle S}$, one can
+> calculate the respective Jaccard index value ${\displaystyle J}$ and
+> vice versa, using the equations ${\displaystyle J=S/(2-S)}$ and
+> ${\displaystyle S=2J/(1+J)}$.
+> 
+> Since the Sørensen--Dice coefficient does not satisfy the triangle
+> inequality, it can be considered a semimetric version of the Jaccard
+> index. The function ranges between zero and one, like Jaccard. Unlike
+> Jaccard, the corresponding difference function
+> 
+> $${\displaystyle d=1-{\frac {2|X\cap Y|}{|X|+|Y|}}}$$
+> 
+> is not a proper distance metric as it does not satisfy the triangle
+> inequality.
 
 
 ## Chemical Similarity
