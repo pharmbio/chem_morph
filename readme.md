@@ -1,15 +1,3 @@
-<style>
-#box {
-  background-color: #fffad8;
-  border-radius: 3pt;
-  border: 2px solid #a2a2a2;
-  padding: 10px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  margin-right: 5px;
-  margin-left: 5px;
-}
-</style>
 ------------------------------------------------------------------------
 
 **ANALYSIS REPORT**  
@@ -19,7 +7,6 @@ A survey on different approaches to calculate distance in cell profiling fingerp
 
 ------------------------------------------------------------------------
 
-![#f03c15](https://placehold.it/15/f03c15/000000?text=+)
 
 **Pharmaceutical Bioinformatics Research Group**  
 
@@ -118,7 +105,7 @@ path). Spearman's is incredibly similar to Kendall's. It is a
 non-parametric test that measures a monotonic relationship using ranked
 data. While it can often be used interchangeably with Kendall's,
 Kendall's is more robust and generally the preferred method of the
-two(Table [1](#corr){reference-type="ref" reference="corr"}). The
+two(Table [1](#corr)). The
 general formula for correlation is:
 
 $$corr(x,y) = \frac{cov(X, Y)}{ \sqrt{ \sigma_{X} \times \sigma_{Y} }}$$
@@ -126,7 +113,7 @@ $$corr(x,y) = \frac{cov(X, Y)}{ \sqrt{ \sigma_{X} \times \sigma_{Y} }}$$
 where $cov(X, Y)$ denotes the covariance of $X$ and $Y$ and $\sigma$ is
 the variance of the variable.
 
-::: {#corr}
+
 
 | Correlation | Type of relation | Type of measurement                        | Type of distribution |
 |-------------|------------------|--------------------------------------------|----------------------|
@@ -136,7 +123,6 @@ the variance of the variable.
 
   Table 1 : Most widely used correlation techniques
 
-:::
 
 ***Distance correlation***: The correlation value can range from -1 to
 1, which indicates perfect negative or positive correlation while zero
@@ -166,13 +152,12 @@ between two rows of numerical data, such as floating-point or integer
 data. It is often done after normalizing or standardizing numeric values
 otherwise, the distance measure will be dominated by large values.
 
-::: {#box}
 NOTE: In order to speed up distance calculations, it is common to remove
 the square root operation when performing thousands or millions of
 calculations. After this modification, the scores will still have the
 same relative proportions and can still be used effectively within a
 machine learning algorithm.
-:::
+
 
 ### Manhattan distance
 
@@ -231,7 +216,7 @@ similarity where vectors are being centred ($\bar{x} = \bar{y} = 0$) and
 unlike the cosine, the correlation is invariant not only to scale but
 also to the shift (location changes) of x and y.
 
-::: {#box}
+
 **Cosine Similarity vs Pearson Correlation**\
 We know that the cosine similarity between two vectors $a$ and $b$ is
 just the angle between them
@@ -253,7 +238,7 @@ $$\hat{a}=\frac{a}{\lVert{a}\rVert}=\frac{z_a}{\sqrt n}$$
 So if the vectors a and b are centered (i.e. have zero means), then
 their cosine similarity will be the same as their correlation
 coefficient.
-:::
+
 
 ### Triangle Area Similarity -- Sector Area Similarity (TS-SS)
 
@@ -278,7 +263,7 @@ Triangle Area Similarity -- Sector Area Similarity (TS-SS) was developed
 to address this problem. An algorithm that can combine both the
 direction and magnitude of vector in similarity check.
 
-::: {#box}
+
 NOTE: I found this method in an article originally falls under Natural
 Language Processing (NLP) but the logic of the metric seems to work very
 well for any vector similarity check.\
@@ -295,7 +280,7 @@ $$\mathrm{SS}(x, y)=\pi \cdot(\mathrm{ED}(x, y)+\operatorname{MD}(x, y))^2 \cdot
 5- Finally by multiplying them together, we combine TS and SS:
 
 $$d_{TS-SS} = TS \times SS$$
-:::
+
 
 ### Jaccard-Needham similarity
 
@@ -317,14 +302,14 @@ $${\displaystyle {\text{Jaccard index}}={\frac {TP}{TP+FP+FN}}}$$
 where TP are the true positives, FP the false positives and FN the false
 negatives
 
-::: {#box}
+
 NOTE: Various forms of functions described as Tanimoto similarity and
 Tanimoto distance occur in the literature and on the Internet. Most of
 these are synonyms for Jaccard similarity and Jaccard distance, but some
 are mathematically different. The similarity ratio is equivalent to
 Jaccard similarity, but the distance function is not the same as Jaccard
 distance.
-:::
+
 
 ### Sørensen--Dice similarity
 
@@ -341,7 +326,7 @@ as:
 
 $${\displaystyle DSC={\frac {2TP}{2TP+FP+FN}}}$$
 
-::: {#box}
+
 NOTE: Sørensen--Dice similarity is not very different in form the
 Jaccard similarity. Both are equivalent in the sense that given a value
 for the Sørensen--Dice coefficient ${\displaystyle S}$, one can
@@ -358,7 +343,7 @@ $${\displaystyle d=1-{\frac {2|X\cap Y|}{|X|+|Y|}}}$$
 
 is not a proper distance metric as it does not satisfy the triangle
 inequality.
-:::
+
 
 ## Chemical Similarity
 
@@ -406,10 +391,9 @@ follows:
 -   $n = a + b + c + d$
 
 Different similarity algorithms is listed in Table
-[2](#alg){reference-type="ref" reference="alg"} based on these
+[2](#alg) based on these
 parameters.
 
-::: {#alg}
 
 | **Algorithm**              | **Formula**                                                                 |
 |--------------------------------|-----------------------------------------------------------------------------------|
@@ -442,7 +426,6 @@ parameters.
 
   Table 2 : Similarity algorithm for binary vectors.
   
-:::
 
 **Burden eigenvalue descriptors or BCUT**: BCUT descriptors are based on
 an extension of Burden's approach[@burden1989molecular] for searching
