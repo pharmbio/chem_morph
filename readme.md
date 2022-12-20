@@ -1,3 +1,15 @@
+<style>
+#box {
+  background-color: #fffad8;
+  border-radius: 3pt;
+  border: 2px solid #a2a2a2;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+</style>
 ------------------------------------------------------------------------
 
 **ANALYSIS REPORT**  
@@ -112,18 +124,16 @@ $$corr(x,y) = \frac{cov(X, Y)}{ \sqrt{ \sigma_{X} \times \sigma_{Y} }}$$
 where $cov(X, Y)$ denotes the covariance of $X$ and $Y$ and $\sigma$ is
 the variance of the variable.
 
-::: adjustbox
-width=
-
 ::: {#corr}
-  Correlation   Type of relation   Type of measurement                           Type of distribution
-  ------------- ------------------ -------------------------------------------- ----------------------
-  Pearson       Linear             Quantitative (interval or ratio) variables           Normal
-  Spearman      Non-linear         Ordinal, interval or ratio variables                  Any
-  Kendall       Non-linear         Ordinal, interval or ratio variables                  Any
 
-  : Most widely used correlation techniques
-:::
+| Correlation | Type of relation | Type of measurement                        | Type of distribution |
+|-------------|------------------|--------------------------------------------|----------------------|
+| Pearson     | Linear           | Quantitative (interval or ratio) variables | Normal               |
+| Spearman    | Non-linear       | Ordinal, interval or ratio variables       | Any                  |
+| Kendall     | Non-linear       | Ordinal, interval or ratio variables       | Any                  |
+
+  Table 1 : Most widely used correlation techniques
+
 :::
 
 ***Distance correlation***: The correlation value can range from -1 to
@@ -154,7 +164,7 @@ between two rows of numerical data, such as floating-point or integer
 data. It is often done after normalizing or standardizing numeric values
 otherwise, the distance measure will be dominated by large values.
 
-::: tcolorbox
+::: {#box}
 NOTE: In order to speed up distance calculations, it is common to remove
 the square root operation when performing thousands or millions of
 calculations. After this modification, the scores will still have the
@@ -219,7 +229,7 @@ similarity where vectors are being centred ($\bar{x} = \bar{y} = 0$) and
 unlike the cosine, the correlation is invariant not only to scale but
 also to the shift (location changes) of x and y.
 
-::: tcolorbox
+::: {#box}
 **Cosine Similarity vs Pearson Correlation**\
 We know that the cosine similarity between two vectors $a$ and $b$ is
 just the angle between them
@@ -266,7 +276,7 @@ Triangle Area Similarity -- Sector Area Similarity (TS-SS) was developed
 to address this problem. An algorithm that can combine both the
 direction and magnitude of vector in similarity check.
 
-::: tcolorbox
+::: {#box}
 NOTE: I found this method in an article originally falls under Natural
 Language Processing (NLP) but the logic of the metric seems to work very
 well for any vector similarity check.\
@@ -305,7 +315,7 @@ $${\displaystyle {\text{Jaccard index}}={\frac {TP}{TP+FP+FN}}}$$
 where TP are the true positives, FP the false positives and FN the false
 negatives
 
-::: tcolorbox
+::: {#box}
 NOTE: Various forms of functions described as Tanimoto similarity and
 Tanimoto distance occur in the literature and on the Internet. Most of
 these are synonyms for Jaccard similarity and Jaccard distance, but some
@@ -329,7 +339,7 @@ as:
 
 $${\displaystyle DSC={\frac {2TP}{2TP+FP+FN}}}$$
 
-::: tcolorbox
+::: {#box}
 NOTE: Sørensen--Dice similarity is not very different in form the
 Jaccard similarity. Both are equivalent in the sense that given a value
 for the Sørensen--Dice coefficient ${\displaystyle S}$, one can
@@ -428,10 +438,9 @@ parameters.
 | Phi Square                     | $(a \times d + b \times c)^2 / ((a+b) \times (a+c) \times (b+c) \times (b+d))$    |
 | Dispersion                     | $(a \times d-b \times c)/(a+b+c+d)^2$                                             |
 
-  : Similarity algorithm for binary vectors.
+  Table 2 : Similarity algorithm for binary vectors.
+  
 :::
-
-[]{#alg label="alg"}
 
 **Burden eigenvalue descriptors or BCUT**: BCUT descriptors are based on
 an extension of Burden's approach[@burden1989molecular] for searching
