@@ -19,6 +19,8 @@ A survey on different approaches to calculate distance in cell profiling fingerp
 
 ------------------------------------------------------------------------
 
+![#f03c15](https://placehold.it/15/f03c15/000000?text=+)
+
 **Pharmaceutical Bioinformatics Research Group**  
 
 by Nima Chamyani  
